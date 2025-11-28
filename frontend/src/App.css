@@ -1,0 +1,150 @@
+
+
+/* Dark theme styles for RAGBot UI - targets actual class names used in App.jsx */
+
+/* Page background and base text */
+
+
+
+html, body, #root {
+  min-height: 100vh;
+  margin: 0;
+  background: #181a1b;
+  color: #e6f2ff;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Centering container (matches .container in App.jsx) */
+
+
+
+.container {
+  min-width: 360px;
+  max-width: 520px;
+  margin: 0 auto;
+  background: linear-gradient(180deg, #0f1720 0%, #0b0f14 100%);
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(2,6,23,0.75), 0 4px 12px rgba(0,0,0,0.6);
+  padding: 40px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Inner stacked content (matches .centered) */
+.centered {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+/* Headings */
+.container h1, .centered h1 {
+  color: #00eaff; /* bright cyan for instant contrast */
+  font-size: 1.9rem;
+  font-weight: 800;
+  margin: 4px 0 8px 0;
+  text-align: center;
+  letter-spacing: 0.6px;
+  text-shadow: 0 6px 22px rgba(0,138,255,0.06);
+}
+.container h2, .centered h2 {
+  color: #dff6ff;
+  font-size: 1.25rem;
+  margin: 0 0 8px 0;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* Forms and inputs */
+.container input[type="text"],
+.container input[type="email"],
+.container input[type="password"],
+.container input[type="file"] {
+  width: 100%;
+  background: #0b0f12;
+  color: #e6f2ff;
+  border: 1px solid rgba(0,234,255,0.12);
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.container input::placeholder {
+  color: rgba(230,242,255,0.45);
+}
+
+/* Buttons - full width look like current UI */
+.container button {
+  width: 100%;
+  background: linear-gradient(90deg,#00eaff 0%, #0055ff 100%);
+  color: #06101a;
+  border: 0;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(3,10,40,0.55);
+  transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+}
+.container button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(3,10,40,0.6);
+}
+.container button:active { transform: translateY(0); }
+
+/* Secondary small buttons inside forms */
+.container button[type="button"] {
+  background: transparent;
+  color: #cfeeff;
+  border: 1px solid rgba(255,255,255,0.04);
+  padding: 10px 12px;
+}
+
+/* Message / status blocks */
+.msg {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.02);
+  color: #cfeeff;
+  font-size: 0.95rem;
+  text-align: center;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.01);
+}
+
+/* Answer box (overrides inline styles in App.jsx if present) */
+.msg.answer {
+  background: #f0fdf4;
+  color: #1a2a2a;
+  border: 1px solid rgba(0,234,255,0.08);
+  text-align: left;
+}
+
+/* Context chunks list */
+.container ul {
+  color: #cfeeff;
+}
+.container ul li { margin-bottom: 6px; }
+
+/* Make sure any global h1 from index.css doesn't override color here */
+/* using higher specificity selector above (.container h1) ensures this file wins */
+
+/* Responsive tweaks */
+@media (max-width: 420px) {
+  .container { padding: 28px 18px; margin: 20px; }
+  .container h1 { font-size: 1.5rem; }
+}
