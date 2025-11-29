@@ -232,8 +232,8 @@ function App() {
               {chatMsg && <div className="msg">{chatMsg}</div>}
               {answer && (
                 <div
-                  className="msg"
-                  style={{background: '#f0fdf4', color: '#166534', marginTop: 16, textAlign: 'left'}}
+                  className="msg answer"
+                  style={{background: '#f0fdf4', marginTop: 16, textAlign: 'left'}}
                 >
                   <strong>Answer:</strong>
                   <div
