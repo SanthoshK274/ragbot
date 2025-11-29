@@ -7,7 +7,7 @@ from sentence_transformers import SentenceTransformer
 load_dotenv()
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
-embedding_model = SentenceTransformer("google/embeddinggemma-300m")
+embedding_model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
 
 class GroqLLM:
     def __init__(self, model="meta-llama/llama-4-scout-17b-16e-instruct"):
